@@ -18,37 +18,34 @@ public class MySecondAssignment{
 
         System.out.println("Cone Geometry \n");
         Scanner in = new Scanner (System.in);
-
-        //version1
-        System.out.print("Enter radius :");
-
-        double radius = in.nextDouble();
-        System.out.print("Enter Height: ");
-        double height = in.nextDouble();
-
-        System.out.print("\n\n");
-
         //version 2
-        System.out.print("Enter Radius :");
-        //
-        String stringRadius = in.next();
         double doubleRadius;
-        if(stringRadius.matches("[d.d]")){
-            doubleRadius = Double.parseDouble(stringRadius);
-        }else{
-            System.out.println("invalid Radius value provided");
-            return;
-        }
+        do {
+            System.out.print("Enter Radius :");
+            String stringRadius = in.next();
+            if(stringRadius.matches("[d.d]")){
+            //    if(true){
+                    doubleRadius = Double.parseDouble(stringRadius);
+                    break;
+                }else{
+                    System.out.println("invalid Radius value provided");
+                    continue;
+                }
+            //}
+        }while(true);
         //
-        System.out.print("Enter Height: ");
-        String stringHeight = in.next();
         double doubleHeight;
-        if(stringHeight.matches("[d.d]")){
-            doubleHeight = Double.parseDouble(stringHeight);
-        }else{
-            System.out.println("invalid Height value provided");
-            return;
-        }
+        do {
+            System.out.print("Enter Height :");
+            String stringHeight = in.next();
+            if(stringHeight.matches("[d.d]")){
+                doubleHeight = Double.parseDouble(stringHeight);
+                break;
+            }else{
+                System.out.println("invalid Height value provided");
+                continue;
+            }
+        }while(true);
         //
         System.out.print("\n\n");
 
