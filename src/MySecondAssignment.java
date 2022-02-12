@@ -20,39 +20,13 @@ public class MySecondAssignment{
 
         System.out.println("Cone Geometry \n");
         Scanner in = new Scanner (System.in);
-        //version 2
-        double doubleRadius;
-        do {
-            System.out.print("Enter Radius :");
-            String stringRadius = in.next();
-            //validation logic
-            Pattern p = Pattern.compile("\\d{1,2}\\.\\d{1,2}");
-            Matcher m = p.matcher(stringRadius);
-            if(m.matches()){
-                    doubleRadius = Double.parseDouble(stringRadius);
-                    break;
-                }else{
-                    System.out.println("invalid Radius value provided");
-                    continue;
-                }
-            //}
-        }while(true);
         //
-        double doubleHeight;
-        do {
-            System.out.print("Enter Height :");
-            String stringHeight = in.next();
-            //validation logic
-            Pattern p = Pattern.compile("\\d{1,2}\\.\\d{1,2}");
-            Matcher m = p.matcher(stringHeight);
-            if(m.matches()){
-                doubleHeight = Double.parseDouble(stringHeight);
-                break;
-            }else{
-                System.out.println("invalid Height value provided");
-                continue;
-            }
-        }while(true);
+        double doubleRadius = takeRadiusInput(in);
+        double doubleHeight = takeHeightInput(in);
+        calculateArea();
+        displayOutput();
+        //
+
         //
         System.out.print("\n\n");
 
@@ -96,5 +70,46 @@ public class MySecondAssignment{
         System.out.printf("Triangle Area:%11.1f\n",triangleArea);
 
 
+    }
+
+    static double  takeRadiusInput(Scanner in){
+        //version 2
+        double doubleRadius;
+        do {
+            System.out.print("Enter Radius :");
+            String stringRadius = in.next();
+            //validation logic
+            Pattern p = Pattern.compile("\\d{1,2}\\.\\d{1,2}");
+            Matcher m = p.matcher(stringRadius);
+            if(m.matches()){
+                doubleRadius = Double.parseDouble(stringRadius);
+                break;
+            }else{
+                System.out.println("invalid Radius value provided");
+                continue;
+            }
+            //}
+        }while(true);
+        //
+        return doubleRadius;
+    }
+
+    static double  takeHeightInput(Scanner in){
+        double doubleHeight;
+        do {
+            System.out.print("Enter Height :");
+            String stringHeight = in.next();
+            //validation logic
+            Pattern p = Pattern.compile("\\d{1,2}\\.\\d{1,2}");
+            Matcher m = p.matcher(stringHeight);
+            if(m.matches()){
+                doubleHeight = Double.parseDouble(stringHeight);
+                break;
+            }else{
+                System.out.println("invalid Height value provided");
+                continue;
+            }
+        }while(true);
+        return doubleHeight;
     }
 }
