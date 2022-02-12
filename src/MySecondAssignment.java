@@ -18,7 +18,18 @@ public class MySecondAssignment{
 
         System.out.println("Cone Geometry \n");
         Scanner in = new Scanner (System.in);
-        System.out.print("Enter stringRadius :");
+
+        //version1
+        System.out.print("Enter radius :");
+
+        double radius = in.nextDouble();
+        System.out.print("Enter Height: ");
+        double height = in.nextDouble();
+
+        System.out.print("\n\n");
+
+        //version 2
+        System.out.print("Enter Radius :");
         //
         String stringRadius = in.next();
         double doubleRadius;
