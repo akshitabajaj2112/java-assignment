@@ -8,6 +8,8 @@ Program:Computer system technology-software development and network engineering 
 
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MySecondAssignment{
 
@@ -23,8 +25,10 @@ public class MySecondAssignment{
         do {
             System.out.print("Enter Radius :");
             String stringRadius = in.next();
-            if(stringRadius.matches("[d.d]")){
-            //    if(true){
+            //validation logic
+            Pattern p = Pattern.compile("\\d{1,2}\\.\\d{1,2}");
+            Matcher m = p.matcher(stringRadius);
+            if(m.matches()){
                     doubleRadius = Double.parseDouble(stringRadius);
                     break;
                 }else{
@@ -38,7 +42,10 @@ public class MySecondAssignment{
         do {
             System.out.print("Enter Height :");
             String stringHeight = in.next();
-            if(stringHeight.matches("[d.d]")){
+            //validation logic
+            Pattern p = Pattern.compile("\\d{1,2}\\.\\d{1,2}");
+            Matcher m = p.matcher(stringHeight);
+            if(m.matches()){
                 doubleHeight = Double.parseDouble(stringHeight);
                 break;
             }else{
